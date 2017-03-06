@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="row">ertertetertertertertert
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="contact,iterStat : ${contacts}">
+                            <td th:text="${iterStat.count}"></td>
+                            <td th:text="${contact.userName}"></td>
+                            <td th:text="${contact.email}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </th:block>
+</body>
+</html>
