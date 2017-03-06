@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en"></head>
+<body>
+<tr th:each="contact : ${contacts}">
+<!-- 	<td th:text="${contact.userId}"></td>  -->
+    <td th:text="${contact.userName}">name</td>
+    <td th:text="${contact.email}">email</td>
+    <td th:text="${contact.phone}">phone</td>
+</tr>
+</body>
+</html>

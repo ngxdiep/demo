@@ -1,31 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <meta charset="UTF-8" />
+    <title>Blog</title>
 </head>
+
 <body>
-	<div class="row">ertertetertertertertert
-                <table class="table table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="contact,iterStat : ${contacts}">
-                            <td th:text="${iterStat.count}"></td>
-                            <td th:text="${contact.userName}"></td>
-                            <td th:text="${contact.email}"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </th:block>
+<h1>Welcome to Spring MVC</h1>
+    Now is: <b th:text="${execInfo.now.time}"></b>
 </body>
+
 </html>

@@ -13,36 +13,51 @@ import com.example.repository.UserRepository;
 @Service("userService")
 @Transactional
 public class UserServiceIplm implements UserService{
-	
+
 	@Autowired
-	private UserRepository userRepos;
-
+    private UserRepository userRepository;
+	
 	@Override
-	public Iterable<User> findAll() {
-		return userRepos.findAll();
+	public User findById(int id) {
+		return userRepository.findOne(id);
 	}
 
 	@Override
-	public List<User> search(String q) {
-//		return userRepos.findByNameContaining(q);
-		return  null;
+	public User findByName(String name) {
+		//return userRepository.findByName(name);
+		return null;
 	}
 
 	@Override
-	public User findOne(int id) {
-		return userRepos.findOne(id);
-	}
-
-	@Override
-	public void save(User contact) {
-		// TODO Auto-generated method stub
+	public void saveUser(User user) {
+		userRepository.save(user);
 		
 	}
 
 	@Override
-	public void delete(int id) {
-		// TODO Auto-generated method stub
-		
+	public void updateUser(User user) {
+		saveUser(user);
 	}
 
+	@Override
+	public void deleteUserById(int id) {
+		userRepository.delete(id);
+	}
+
+	@Override
+	public void deleteAllUsers() {
+		userRepository.deleteAll();
+	}
+
+	@Override
+	public List<User> findAllUsers() {
+		return (List<User>) userRepository.findAll();
+	}
+
+	@Override
+	public boolean isUserExist(User user) {
+		 return findByName(user.getUserName()) != null;
+	}
+	
+	
 }
