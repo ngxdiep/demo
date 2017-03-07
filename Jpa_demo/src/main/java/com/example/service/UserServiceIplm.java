@@ -12,7 +12,7 @@ import com.example.repository.UserRepository;
 
 @Service("userService")
 @Transactional
-public class UserServiceIplm implements UserService{
+public class UserServiceIplm implements IUserService{
 
 	@Autowired
     private UserRepository userRepository;

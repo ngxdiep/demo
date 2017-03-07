@@ -11,11 +11,11 @@ import javax.persistence.*;
 @Table(name ="users")
 public class User implements Serializable{
 
-	private static final long serialVersionUD =1;
+	private static final long serialVersionUD =1L;
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="userid")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="user_id")
 	private Integer userId;
 	
 	@Column(name = "username")

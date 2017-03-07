@@ -4,10 +4,15 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name="product")
@@ -17,7 +22,7 @@ public class Product implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="productid")
+	@Column(name="product_id")
 	private Integer productId;
 	
 	@Column(name = "productname")
@@ -26,6 +31,23 @@ public class Product implements Serializable {
 	@Column(name = "price")
 	private Float price;
 	
+
+	@Column(name = "note")
+	private String note;
+	
+	
+	@ManyToOne
+	@JoinColumn(name="catalogl_id")
+	private Catalog catalog;
+	
+	public Catalog getCatalog() {
+		return catalog;
+	}
+
+	public void setCatalog(Catalog catalog) {
+		this.catalog = catalog;
+	}
+
 	public Integer getProductId() {
 		return productId;
 	}
@@ -58,7 +80,5 @@ public class Product implements Serializable {
 		this.note = note;
 	}
 
-	@Column(name = "note")
-	private String note;
 
 }

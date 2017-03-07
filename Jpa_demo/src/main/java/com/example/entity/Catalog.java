@@ -1,12 +1,15 @@
 package com.example.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -17,11 +20,26 @@ public class Catalog implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="catalogid")
+	@Column(name="catalog_id")
 	private Integer catalogId;
 	
+	@Column(name = "catalogname")
+	private String catalogName;
+	
+	@OneToMany(mappedBy ="catalog", cascade=CascadeType.ALL)
+	private Set<Product> products;
+
+
 	public Integer getCatalogId() {
 		return catalogId;
+	}
+
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
 	}
 
 	public void setCatalogId(Integer catalogId) {
@@ -35,7 +53,4 @@ public class Catalog implements Serializable {
 	public void setCatalogName(String catalogName) {
 		this.catalogName = catalogName;
 	}
-
-	@Column(name = "catalogname")
-	private String catalogName;
 }

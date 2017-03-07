@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en"></head>
 <body>
-<tr th:each="contact : ${contacts}">
+<tr>
 <!-- 	<td th:text="${contact.userId}"></td>  -->
-    <td th:text="${contact.userName}">name</td>
-    <td th:text="${contact.email}">email</td>
-    <td th:text="${contact.phone}">phone</td>
+    <td th:text="${user.userName}">name</td>
+    <td th:text="${user.email}">email</td>
+    <td th:text="${user.phone}">phone</td>
 </tr>
 </body>
 </html>

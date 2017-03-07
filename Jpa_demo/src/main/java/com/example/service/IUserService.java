@@ -4,7 +4,7 @@ import java.util.List;
 
 import com.example.entity.User;
 
-public interface UserService  {
+public interface IUserService  {
 	User findById(int id);
 	 
     User findByName(String name);
