@@ -71,15 +71,15 @@ public class RestApiTest {
   
     public static void main(String args[]){
         listAllUsers();
-        getUser();
-        createUser();
-        listAllUsers();
-        updateUser();
-        listAllUsers();
-        deleteUser();
-        listAllUsers();
-        deleteAllUsers();
-        listAllUsers();
+//        getUser();
+//        createUser();
+//        listAllUsers();
+//        updateUser();
+//        listAllUsers();
+//        deleteUser();
+//        listAllUsers();
+//        deleteAllUsers();
+//        listAllUsers();
     }
 }
 
