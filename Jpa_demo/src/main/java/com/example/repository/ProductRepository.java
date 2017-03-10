@@ -12,7 +12,7 @@ import com.example.entity.Product;
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Integer> {
 //	@Query("Select * from Product")
-//	List<Object[]> 	findByCatalogId();
+//	List<Object[]> 	findByCatalogId()
 	@Query("SELECT  p.productName, c.catalogName FROM  Product p INNER JOIN p.catalog c WHERE c.catalogId = :id")
 	List<Object[]> findByCatalogId(@Param("id") int id);
 }

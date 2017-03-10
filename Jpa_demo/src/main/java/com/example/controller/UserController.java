@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.example.entity.User;
@@ -41,6 +42,7 @@ public class UserController {
 	// -------------------Retrieve All Users---------------------------------------------
 	 
 	    @RequestMapping(value = "/user/", method = RequestMethod.GET)
+	    @ResponseBody
 	    public ResponseEntity<List<User>> listAllUsers() {
 	        List<User> users = userService.findAllUsers();
 	        if (users.isEmpty()) {
